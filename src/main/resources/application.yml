@@ -1,6 +1,27 @@
 server:
   port: 8800
 
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://tx.xiaopo.xyz:3306/spring
+    username: xiaopo
+    password: 110911
+
+  session:
+    store-type: none
+
+mybatis:
+  mapper-locations: classpath://mapper/**/*.xml
+
+
+
+
 telegram:
   access_key: 765066780:AAGyNXlOj21IkQ0WISaxT-ONIezqZgTa9Xo
   url: https://api.telegram.org/bot${telegram.access_key}/
+
+yande:
+  url: https://yande.re
+  postApi: ${yande.url}/post.json
+  tagApi: ${yande.url}/tag.json
