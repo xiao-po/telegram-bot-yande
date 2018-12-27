@@ -1,0 +1,6 @@
+server:
+  port: 8800
+
+telegram:
+  access_key: 765066780:AAGyNXlOj21IkQ0WISaxT-ONIezqZgTa9Xo
+  url: https://api.telegram.org/bot${telegram.access_key}/
