@@ -1,7 +1,10 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.model.command.CommandResponse;
 import com.example.springboot.model.telegram.response.TelegramResult;
+import com.example.springboot.services.CommandService;
 import com.example.springboot.services.MessageService;
+import com.example.springboot.value.CommandMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +17,7 @@ import java.util.Map;
 public class MainController {
 
     @Autowired
-    MessageService messageService;
+    CommandService commandService;
 
 
     @GetMapping("/")
@@ -25,7 +28,13 @@ public class MainController {
 
     @PostMapping("/getMessages")
     String getMessages(@RequestBody TelegramResult telegramResult){
-        messageService.repeater(telegramResult);
+        // 判断是否是command
+        if (!telegramResult.isCommand()) {
+            this.commandService.replyNotCommand();
+        } else {
+            this.commandService.dispatch(telegramResult);
+        }
+
         return "ok";
     }
     @GetMapping("/getMessages")
