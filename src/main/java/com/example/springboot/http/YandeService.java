@@ -1,5 +1,9 @@
 package com.example.springboot.http;
 
-public interface YandeService {
+import com.example.springboot.model.yande.YandeImage;
 
+import java.util.List;
+
+public interface YandeService {
+    List<YandeImage> getImageByLimit(int limit);
 }

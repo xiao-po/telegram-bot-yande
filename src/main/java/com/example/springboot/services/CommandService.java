@@ -5,6 +5,6 @@ import com.example.springboot.model.telegram.reply.TelegramReplyMessage;
 import com.example.springboot.model.telegram.response.TelegramResult;
 
 public interface CommandService {
-    CommandResponse dispatch(TelegramResult result);
+    void dispatch(TelegramResult result);
     TelegramReplyMessage replyNotCommand();
 }

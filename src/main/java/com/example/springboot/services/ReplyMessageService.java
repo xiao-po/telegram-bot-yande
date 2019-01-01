@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ReplyMessageService {
-    void sendText(TelegramReplyMessage message);
-    void sendImage(TelegramReplyMessage message);
+    void sendNoCommandMessage(int chat_id);
+    void sendText(int chat_id, String text);
 }

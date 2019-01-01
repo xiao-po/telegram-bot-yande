@@ -33,6 +33,7 @@ public class YandeImage {
 
     private String file_url;
 
+
     private boolean is_shown_in_index;
 
     private String preview_url;
@@ -81,6 +82,9 @@ public class YandeImage {
 
     private String frames_pending_string;
 
+    private List<Object> frames_pending;
+
+    private List<Object> frames;
 
     private String frames_string;
 
@@ -338,6 +342,7 @@ public class YandeImage {
         this.is_rating_locked = is_rating_locked;
     }
 
+
     public boolean isHas_children() {
         return has_children;
     }
@@ -400,6 +405,22 @@ public class YandeImage {
 
     public void setFrames_pending_string(String frames_pending_string) {
         this.frames_pending_string = frames_pending_string;
+    }
+
+    public List<Object> getFrames() {
+        return frames;
+    }
+
+    public void setFrames(List<Object> frames) {
+        this.frames = frames;
+    }
+
+    public List<Object> getFrames_pending() {
+        return frames_pending;
+    }
+
+    public void setFrames_pending(List<Object> frames_pending) {
+        this.frames_pending = frames_pending;
     }
 
     public String getFrames_string() {
